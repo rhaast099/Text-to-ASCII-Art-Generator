@@ -1,0 +1,27 @@
+{
+  "name": "local-ascii-art-studio",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "package:win": "caxa --input . --output dist/ASCII-Art-Studio.exe --exclude \"dist/**\" -- \"{{caxa}}/node_modules/.bin/node\" \"{{caxa}}/server.js\""
+  },
+  "dependencies": {
+    "figlet": "^1.9.4"
+  },
+  "devDependencies": {
+    "@yao-pkg/pkg": "^6.6.0",
+    "caxa": "^3.0.1"
+  },
+  "pkg": {
+    "assets": [
+      "index.html",
+      "app.js",
+      "styles.css",
+      "node_modules/figlet/fonts/**/*",
+      "node_modules/figlet/importable-fonts/**/*"
+    ]
+  }
+}
