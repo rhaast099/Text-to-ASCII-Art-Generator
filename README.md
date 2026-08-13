@@ -1,6 +1,6 @@
 # Text to ASCII Art Generator
 
-一个完全本地运行的文字转 ASCII Art 工具，内置 328 种 FIGlet 字体，支持字体搜索、样式过滤、全字体预览、文本复制以及 TXT/PNG 导出。
+一个完全本地运行的文字转 ASCII Art 工具，内置 328 种由 Git 管理的 FIGlet 字体，支持字体搜索、样式过滤、全字体预览、文本复制以及 TXT/PNG 导出。
 
 ## 1 功能
 
@@ -89,6 +89,7 @@ ascii.js                     Basic ASCII renderer and helpers
 index.html                   Application page
 server.js                    Local server and FIGlet API
 styles.css                   Interface styles
+fonts/                       Git-managed FIGlet .flf files
 test/                        Automated tests
 tools/Build-Distribution.ps1 Distribution builder
 Build-Distribution.cmd       Double-click builder launcher
@@ -98,10 +99,10 @@ package-lock.json            Locked dependency versions
 
 以下内容不会提交到 Git：
 
-- `node_modules/`：可通过 `npm install` 根据锁文件恢复。
+- `node_modules/`：可通过 `npm install` 根据锁文件恢复；程序字体已单独保存在 `fonts/` 并提交到 Git。
 - `dist/`：由打包脚本生成的 EXE 和 ZIP 构建产物。
 
-因此 GitHub 仓库包含完整的可重建项目，但不直接存储体积较大的依赖目录和二进制产物。
+因此 GitHub 仓库直接包含全部 FIGlet 字体和完整的可重建项目，但不存储可恢复的依赖目录与二进制产物。
 
 ## 8 技术栈
 

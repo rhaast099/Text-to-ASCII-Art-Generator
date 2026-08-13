@@ -8,6 +8,8 @@ import figlet from 'figlet';
 const root = dirname(fileURLToPath(import.meta.url));
 const port = Number(process.env.PORT) || 4173;
 const types = { '.css': 'text/css', '.html': 'text/html', '.js': 'text/javascript', '.json': 'application/json' };
+const fontPath = join(root, 'fonts');
+figlet.defaults({ fontPath });
 const fonts = figlet.fontsSync().sort((a, b) => a.localeCompare(b));
 
 export const listFonts = () => fonts;

@@ -34,6 +34,7 @@ function Build-PortableZip {
   foreach ($file in @('server.js', 'app.js', 'index.html', 'styles.css', 'package.json')) {
     Copy-Item -LiteralPath (Join-Path $projectRoot $file) -Destination $packageRoot -Force
   }
+  Copy-Item -LiteralPath (Join-Path $projectRoot 'fonts') -Destination (Join-Path $packageRoot 'fonts') -Recurse -Force
   New-Item -ItemType Directory -Path (Join-Path $packageRoot 'node_modules') -Force | Out-Null
   Copy-Item -LiteralPath (Join-Path $projectRoot 'node_modules\figlet') -Destination (Join-Path $packageRoot 'node_modules\figlet') -Recurse -Force
   $nodePath = (Get-Command node.exe -ErrorAction Stop).Source

@@ -20,6 +20,7 @@
       "index.html",
       "app.js",
       "styles.css",
+      "fonts/**/*",
       "node_modules/figlet/fonts/**/*",
       "node_modules/figlet/importable-fonts/**/*"
     ]
